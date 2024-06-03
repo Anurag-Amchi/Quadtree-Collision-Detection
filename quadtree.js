@@ -19,6 +19,20 @@ class Rectangle{
             point.y >= this.y - this.h &&
             point.y <= this.y + this.h);
     }
+
+    intersects(range) {
+        return !(range.x - range.w > this.x + this.w ||
+            range.x + range.w < this.x - this.w ||
+            range.y - range.h > this.y + this.h ||
+            range.y + range.h < this.y - this.h);
+    }
+
+    within(range) {
+        return (range.x + range.w >= this.x + this.w &&
+            range.x - range.w <= this.x - this.w &&
+            range.y + range.h >= this.y + this.h &&
+            range.y - range.h <= this.y - this.h);
+    }
 }
 
 class QuadTree {
@@ -89,6 +103,46 @@ class QuadTree {
         }
     }
 
+    query(range) {
+        let found = [];
+        if (!this.boundary.intersects(range)) {
+            //empty array
+            return found;
+        }
+        if(this.boundary.within(range)){
+            // if quadtree completely within range 
+            // then return all points of children
+            if(this.divided){
+                found = found.concat(this.northeast.query(range));
+                found = found.concat(this.northwest.query(range));
+                found = found.concat(this.southeast.query(range));
+                found = found.concat(this.southwest.query(range));
+            }
+            else{
+                // directly add the whole array
+                // as all points inside range
+                found = found.concat(this.points);
+            }
+        }
+        else {
+            if (this.divided) {
+                found = found.concat(this.northeast.query(range));
+                found = found.concat(this.northwest.query(range));
+                found = found.concat(this.southeast.query(range));
+                found = found.concat(this.southwest.query(range));
+            }
+            else{
+                for (let p of this.points) {
+                    //count++;
+                    if (range.contains(p)) {
+                        found.push(p);
+                    }
+                }
+            }
+        }
+        return found;
+    }
+    
     show(){
         stroke(255);
         strokeWeight(1);
