@@ -46,29 +46,44 @@ class QuadTree {
         this.divided = true; 
     }
 
-    insert(point){
-        if(!this.boundary.contains(point)){
+    insert(point) {
+        if (!this.boundary.contains(point)) {
             return false;
         }
-        if(this.points.length < this. capacity){
+        if (this.points.length < this.capacity && this.divided==false) {
             this.points.push(point);
             return true;
         }
         else {
-            if(!this.divided){
+            if (!this.divided) {
                 this.subdivide();
                 this.divided = true;
+                for(let p of this.points){
+                    if (this.northeast.insert(p)) {
+                        continue;
+                    }
+                    else if (this.northwest.insert(p)) {
+                        continue;
+                    }
+                    else if (this.southeast.insert(p)) {
+                        continue;
+                    }
+                    else if (this.southwest.insert(p)) {
+                        continue;
+                    }
+                }
+                this.points=[];
             }
-            if (this.northeast.insert(point)){
+            if (this.northeast.insert(point)) {
                 return true;
             }
-            else if(this.northwest.insert(point)){
+            else if (this.northwest.insert(point)) {
                 return true;
             }
-            else if(this.southeast.insert(point)){
+            else if (this.southeast.insert(point)) {
                 return true;
             }
-            else if(this.southwest.insert(point)){
+            else if (this.southwest.insert(point)) {
                 return true;
             }
         }
