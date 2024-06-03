@@ -130,7 +130,7 @@ class QuadTree {
                 found = found.concat(this.northwest.query(range));
                 found = found.concat(this.southeast.query(range));
                 found = found.concat(this.southwest.query(range));
-            }
+            } 
             else{
                 for (let p of this.points) {
                     //count++;
