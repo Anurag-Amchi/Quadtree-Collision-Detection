@@ -3,13 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Unoptimised collision detection</title>
     <script src="libraries/p5.js"></script>
     <script src="particle.js"></script>
     <script src="quadtree.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    bad
-    <script src="badsketch.js"></script>
+    <a class="linkedin" href="https://www.linkedin.com/in/anuragamchi/">Anurag Amchi</a>
+    <a class="limage" href="https://www.linkedin.com/in/anuragamchi/">
+        <img src="./images/linkedin_icon.png" alt="LinkedIn">
+    </a>
+    <div class="flex-container">
+        <header>
+            <a href="index.html"><img src="./images/output-onlinetexttools.png" alt=""></a>
+            <nav>
+                <ul>
+                    <li><a href="quadtree.html" class="link">Quadtree <br/> Construction</a></li>
+                    <li><a href="query.html" class="link">Quadtree query</a></li>
+                    <li><a href="bad.html" class="link">Unoptimised <br/> Collision Detection</a></li>
+                    <li><a href="ps.html" class="link">Optimised <br/> Collision Detection</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="middle-content">
+            <h1>Unoptimised Collision Detection</h1>
+            <p>Unoptimized collision detection involves a straightforward approach of checking every object against every other object in a scene to determine if they intersect or collide. This brute-force method compares each pair of objects, leading to a quadratic time complexity O(n^2). As the number of objects increases, the computational cost grows rapidly, making this approach inefficient for large-scale simulations or real-time applications. Unoptimized collision detection does not take advantage of spatial organization or hierarchical structures, resulting in redundant checks and potentially unnecessary computations. While simple to implement, it lacks scalability and can become a bottleneck in performance-sensitive scenarios like video games or simulations requiring frequent and fast collision checks.</p>
+        </div>
+        <div class="container">
+            <script src="badsketch.js"></script>
+        </div>
+    </div>
+    <div class="instructions">
+        <p> The frame rate while detecting collisions by this algorithm as you can see is very low and can severely affaect overall performance.<br/><br/><b>Warning:</b> If the framerate goes too low, consider changing to another page to avoid overheating and damage. </p>
+    </div>
+    <div class="fps">
+        
+    </div>
 </body>
 </html>
