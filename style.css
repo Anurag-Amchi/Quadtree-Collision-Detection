@@ -1,0 +1,185 @@
+body {
+    margin: 20px;
+    background-color: rgb(216, 243, 220);
+}
+
+header nav {
+    margin-top: 10px; /* Adjust this value as needed to create space below the header image */
+}
+
+header img {
+    width: 200px; /* Adjust the width as needed */
+    height: auto; /* Keeps the aspect ratio of the image */
+}
+canvas {
+    position: absolute;
+    top: 50px; /* Adjust this value to control the distance from the top */
+    right: 50px; /* Adjust this value to control the distance from the right */
+    margin: 0; /* Remove the margin or set it as needed */
+}
+
+nav{
+    background-color: rgb(149, 213, 178);
+    padding: 20px;
+    width: 160px;
+    border-radius: 20px;
+}
+
+nav ul {
+    list-style-type: none; /* Removes the default list bullet */
+    padding: 0; /* Removes the default padding */
+    margin: 0; /* Removes the default margin */
+    text-align: center;
+}
+
+nav ul li {
+    margin-bottom: 50px;
+}
+
+nav li:last-child {
+    margin-bottom: 0;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: rgb(8, 28, 21);
+    font-size: 20px;
+    /* font-family: Arial, sans-serif; */
+}
+
+nav ul li::after {
+    content: ''; /* Necessary for the ::after pseudo-element to work */
+    display: block; /* Makes the pseudo-element behave like a block element */
+    margin: auto; /* Centers the bar horizontally */
+    height: 2px; /* Height of the bar */
+    width: 0%; /* Width of the bar, adjust as needed */
+    background-color: rgb(27, 67, 50); /* Color of the bar */
+    margin-top:auto; /* Distance between the bar and the list item */
+    transition: 0.5s;
+}
+nav ul li:hover::after {
+    width: 100%; /* Adjust the width of the bar on hover */
+}
+
+.flex-container {
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Space out children evenly */
+    align-items: start; /* Align items at their start */
+    margin-top: 20px; /* Top margin for spacing, adjust as needed */
+}
+
+/* Style for the navigation */
+nav {
+    width: 160px; /* Fixed width for the nav, adjust as needed */
+    /* Additional styling for the nav */
+}
+
+.linkedin{
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    text-decoration: none;
+    color: rgb(8, 28, 21);
+    font-size: 30px;
+}
+
+.limage img{
+    position: absolute;
+    width: 2%;
+    height: auto;
+    top: 10px;
+    right: 235px;
+    background-color: rgb(216, 243, 220);
+}
+
+/* Middle content styling */
+.middle-content {
+    margin-left: 20px;
+    margin-top: 70px;
+    margin-right: 650px;
+    flex-grow: 1; /* Allows the middle content to grow and fill available space */
+    padding: 10px; /* Padding around the content, adjust as needed */
+    color: rgb(27, 67, 50);
+    background-color: rgb(149, 213, 178);
+    border-radius: 20px;
+
+}
+
+.middle-content h1 {
+    margin-top: 0px;
+    text-align: center;
+}
+
+.middle-content p {
+    text-align: center;
+    font-size: 20px;
+}
+
+.instructions {
+    font-size: 18px;
+    margin-top: 20px;
+    width: 826px;
+    padding: 10px;
+    color: rgb(216, 243, 220);
+    background-color: rgb(27, 67, 50); /* Example background color */
+    border-radius: 20px;
+}
+.instructions p{
+    margin-top: 5px;
+}
+
+.fps{
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 745px;
+    width: 81px;
+    padding: 10px;
+    color: rgb(216, 243, 220);
+    background-color: rgb(27, 67, 50); /* Example background color */
+    border-radius: 20px;
+}
+
+.article{
+    font-size: 20px;
+    margin-left: 20px;
+    margin-top: 70px;
+    margin-right: 20px;
+    flex-grow: 1; /* Allows the middle content to grow and fill available space */
+    padding: 20px; /* Padding around the content, adjust as needed */
+    color: rgb(27, 67, 50);
+    background-color: rgb(149, 213, 178);
+    border-radius: 20px;
+}
+
+.image1{
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.images {
+    display: flex; /* Enables Flexbox layout */
+    justify-content: center; /* Centers the images horizontally */
+    align-items: center; /* Aligns the images vertically in the center */
+    gap: 20px; /* Optional: Adds space between the images */
+}
+
+.image2{
+    width: 36.5%;
+    height: auto;
+}
+.image3{
+    width: 30%;
+    height: auto;
+}
+.image4{
+    width: 30%;
+    height: auto;
+}
+
+.header-content {
+    display: flex; /* Enables flexbox layout */
+    align-items: center; /* Vertically centers the items in the container */
+    justify-content: start; /* Aligns items to the start of the container */
+}
