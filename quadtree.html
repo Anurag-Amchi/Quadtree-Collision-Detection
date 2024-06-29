@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadtree Construction</title>
+    <script src="libraries/p5.js"></script>
+    <script src="quadtree.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a class="linkedin" href="https://www.linkedin.com/in/anuragamchi/">Anurag Amchi</a>
+    <a class="limage" href="https://www.linkedin.com/in/anuragamchi/">
+        <img src="./images/linkedin_icon.png" alt="LinkedIn">
+    </a>
+    <div class="flex-container">
+        <header>
+            <a href="index.html"><img src="./images/output-onlinetexttools.png" alt=""></a>
+            <nav>
+                <ul>
+                    <li><a href="quadtree.html" class="link">Quadtree <br/> Construction</a></li>
+                    <li><a href="query.html" class="link">Quadtree query</a></li>
+                    <li><a href="bad.html" class="link">Unoptimised <br/> Collision Detection</a></li>
+                    <li><a href="ps.html" class="link">Optimised <br/> Collision Detection</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="middle-content">
+            <h1>Quadtree Construction</h1>
+            <p>The construction of a quadtree begins by dividing a two-dimensional space into four equal quadrants or regions. This process is recursively applied to each quadrant that contains more than a predefined number of points or exceeds a certain level of detail, leading to a hierarchical structure where each node has exactly four children. The root node represents the entire space, and each subsequent level divides the space into smaller and smaller quadrants. This recursive partitioning continues until each leaf node contains a manageable number of points or the desired level of granularity is achieved. The resulting quadtree allows for efficient operations such as searching, inserting, and deleting spatial data, as it reduces the complexity of these operations to logarithmic time in the average case. By organizing data in this hierarchical manner, quadtrees provide an effective way to manage and query large spatial datasets.</p>
+        </div>
+        <div class="container">
+            <script src="sketch.js"></script>
+        </div>
+    </div>
+    <div class="instructions">
+        <p> <b>Instructions</b> <br/>Start drawing with your mouse on the canvas provided to the right. You can see the quadtree dividing the canvas every time a leaf node has more than the required number of points (here the limit is 4). <br/><br> Note that a single mouse click may produce more than one point. Refresh the page to get an empty canvas.</p>
+    </div>
+
+</body>
+</html>
